@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="引言 hexo 搭建博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo 搭建博客">
+<meta property="og:url" content="http://example.com/2021/01/25/17043/index.html">
+<meta property="og:site_name" content="白东斌">
+<meta property="og:description" content="引言 hexo 搭建博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/01/25/17043/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/runsuccess.png">
+<meta property="og:image" content="http://example.com/2021/01/25/17043/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nextdir.png">
+<meta property="article:published_time" content="2021-01-25T15:09:47.000Z">
+<meta property="article:modified_time" content="2021-01-26T13:15:35.000Z">
+<meta property="article:author" content="白东斌">
+<meta property="article:tag" content="博客搭建">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/01/25/17043/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/runsuccess.png">
+
+<link rel="canonical" href="http://example.com/2021/01/25/17043/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>hexo 搭建博客 | 白东斌</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">白东斌</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">当你想要放弃的那一刻，想想为什么当初坚持走到这里。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/17043/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="白东斌">
+      <meta itemprop="description" content="当你想要放弃的那一刻，想想为什么当初坚持走到这里。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="白东斌">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexo 搭建博客
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-25 23:09:47" itemprop="dateCreated datePublished" datetime="2021-01-25T23:09:47+08:00">2021-01-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-26 21:15:35" itemprop="dateModified" datetime="2021-01-26T21:15:35+08:00">2021-01-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">环境搭建</span></a>
+                </span>
+            </span>
+
+<!-- 标签位置放到标题下方 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-tag"></i>
+              </span>
+              <span class="post-meta-item-text">标签</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a>
+                </span>
+            </span>
+<!-- 标签位置放到标题下方 -->
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><blockquote>
+<p>hexo 搭建博客</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="相关依赖"><a href="#相关依赖" class="headerlink" title="相关依赖"></a>相关依赖</h1><h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>Node.js 安装见相关文档</p>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><h3 id="hexo-官网"><a href="#hexo-官网" class="headerlink" title="hexo 官网"></a>hexo 官网</h3><p>hexo 官网 <a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a></p>
+<p>hexo 中文官网 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
+<p>hexo 详细使用见官网</p>
+<h3 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><h2 id="初始化-hexo"><a href="#初始化-hexo" class="headerlink" title="初始化 hexo"></a>初始化 hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h2 id="启动-hexo"><a href="#启动-hexo" class="headerlink" title="启动 hexo"></a>启动 hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>启动成功访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 如下图<br><img src="./hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/runsuccess.png" alt="启动成功"></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h2><p>配置 hexo-theme-next 主题</p>
+<p>git 地址 <a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></p>
+<p>选择相应版本代码下载 zip 到本地，本文使用 7.8.0 版本</p>
+<p>安装有两种方式，一种直接 github 克隆项目，方便版本升级，一种直接下载文件，本文选择直接下载，因为需要修改源代码，克隆意义不大。</p>
+<p>解压下载的 zip 将文件拷贝到项目的 themes 文件夹中，并重命名文件为 next，如图</p>
+<p><img src="./hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nextdir.png" alt="next 目录"></p>
+<p>修改项目 _config.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+<h2 id="主题配置文件选择"><a href="#主题配置文件选择" class="headerlink" title="主题配置文件选择"></a>主题配置文件选择</h2><p>配置文件有两个，一个是项目的 _config.yml，一个是主题的 _config.yml。</p>
+<p>Hexo 5.0.0 起提供独立的 _config.[theme].yml 文件的方式，但是不支持热部署。</p>
+<p>next 主题也提供了两个解决方案，可以参见next包中的 docs/zh-CN/DATA-FILES.md 中文文档，同样不支持热部署。</p>
+<p>选择 _config.[theme].yml 方式在根目录建 _config.next.yml 文件</p>
+<h2 id="永久链接配置"><a href="#永久链接配置" class="headerlink" title="永久链接配置"></a>永久链接配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h1 id="图片相对路径问题"><a href="#图片相对路径问题" class="headerlink" title="图片相对路径问题"></a>图片相对路径问题</h1><p>修改配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="首页不显示全文"><a href="#首页不显示全文" class="headerlink" title="首页不显示全文"></a>首页不显示全文</h1><p>在文章的要分段的地方加上下面注释</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="标签位置放到标题下方"><a href="#标签位置放到标题下方" class="headerlink" title="标签位置放到标题下方"></a>标签位置放到标题下方</h1><p>next 主题文件夹下 layout/_macro/post.swig</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if post.categories and post.categories.length and theme.post_meta.categories %&#125;</span><br><span class="line">  &lt;span class&#x3D;&quot;post-meta-item&quot;&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;post-meta-item-icon&quot;&gt;</span><br><span class="line">      &lt;i class&#x3D;&quot;fa fa-folder-o&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">    &lt;&#x2F;span&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;post-meta-item-text&quot;&gt;&#123;&#123; __(&#39;post.in&#39;) &#125;&#125;&lt;&#x2F;span&gt;</span><br><span class="line">    &#123;%- for cat in post.categories.toArray() %&#125;</span><br><span class="line">      &lt;span itemprop&#x3D;&quot;about&quot; itemscope itemtype&#x3D;&quot;http:&#x2F;&#x2F;schema.org&#x2F;Thing&quot;&gt;</span><br><span class="line">        &lt;a href&#x3D;&quot;&#123;&#123; url_for(cat.path) &#125;&#125;&quot; itemprop&#x3D;&quot;url&quot; rel&#x3D;&quot;index&quot;&gt;&lt;span itemprop&#x3D;&quot;name&quot;&gt;&#123;&#123; cat.name &#125;&#125;&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;</span><br><span class="line">      &lt;&#x2F;span&gt;</span><br><span class="line"></span><br><span class="line">      &#123;%- set cat_length &#x3D; post.categories.length %&#125;</span><br><span class="line">      &#123;%- if cat_length &gt; 1 and loop.index !&#x3D;&#x3D; cat_length %&#125;</span><br><span class="line">        &#123;&#123; __(&#39;symbol.comma&#39;) &#125;&#125;</span><br><span class="line">      &#123;%- endif %&#125;</span><br><span class="line">    &#123;%- endfor %&#125;</span><br><span class="line">  &lt;&#x2F;span&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>下方增加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 标签位置放到标题下方 --&gt;</span><br><span class="line">          &#123;%- if post.tags and post.tags.length and theme.post_meta.tags %&#125;</span><br><span class="line">            &lt;span class&#x3D;&quot;post-meta-item&quot;&gt;</span><br><span class="line">              &lt;span class&#x3D;&quot;post-meta-item-icon&quot;&gt;</span><br><span class="line">                &lt;i class&#x3D;&quot;fa fa-tag&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">              &lt;&#x2F;span&gt;</span><br><span class="line">              &lt;span class&#x3D;&quot;post-meta-item-text&quot;&gt;&#123;&#123; __(&#39;menu.tags&#39;) &#125;&#125;&lt;&#x2F;span&gt;</span><br><span class="line">              &#123;%- for cat in post.tags.toArray() %&#125;</span><br><span class="line">                &lt;span itemprop&#x3D;&quot;about&quot; itemscope itemtype&#x3D;&quot;http:&#x2F;&#x2F;schema.org&#x2F;Thing&quot;&gt;</span><br><span class="line">                  &lt;a href&#x3D;&quot;&#123;&#123; url_for(cat.path) &#125;&#125;&quot; itemprop&#x3D;&quot;url&quot; rel&#x3D;&quot;index&quot;&gt;&lt;span itemprop&#x3D;&quot;name&quot;&gt;&#123;&#123; cat.name &#125;&#125;&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;</span><br><span class="line">                &lt;&#x2F;span&gt;</span><br><span class="line"></span><br><span class="line">                &#123;%- set cat_length &#x3D; post.tags.length %&#125;</span><br><span class="line">                &#123;%- if cat_length &gt; 1 and loop.index !&#x3D;&#x3D; cat_length %&#125;</span><br><span class="line">                  &#123;&#123; __(&#39;symbol.comma&#39;) &#125;&#125;</span><br><span class="line">                &#123;%- endif %&#125;</span><br><span class="line">              &#123;%- endfor %&#125;</span><br><span class="line">            &lt;&#x2F;span&gt;</span><br><span class="line">          &#123;%- endif %&#125;</span><br><span class="line">&lt;!-- 标签位置放到标题下方 --&gt;</span><br></pre></td></tr></table></figure>
+<p>主题配置文件增加</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>删掉底部标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if post.tags and post.tags.length %&#125;</span><br><span class="line">  &#123;%- if theme.tag_icon %&#125;</span><br><span class="line">    &#123;%- set tag_indicate &#x3D; &#39;&lt;i class&#x3D;&quot;fa fa-tag&quot;&gt;&lt;&#x2F;i&gt;&#39; %&#125;</span><br><span class="line">  &#123;% else %&#125;</span><br><span class="line">    &#123;%- set tag_indicate &#x3D; &#39;#&#39; %&#125;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">  &lt;div class&#x3D;&quot;post-tags&quot;&gt;</span><br><span class="line">    &#123;%- for tag in post.tags.toArray() %&#125;</span><br><span class="line">      &lt;a href&#x3D;&quot;&#123;&#123; url_for(tag.path) &#125;&#125;&quot; rel&#x3D;&quot;tag&quot;&gt;&#123;&#123; tag_indicate &#125;&#125; &#123;&#123; tag.name &#125;&#125;&lt;&#x2F;a&gt;</span><br><span class="line">    &#123;%- endfor %&#125;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+<!-- 删掉底部标签
+          <div class="post-tags">
+              <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag"># 博客搭建</a>
+          </div>
+-->
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E4%BE%9D%E8%B5%96"><span class="nav-number">2.</span> <span class="nav-text">相关依赖</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js"><span class="nav-number">2.1.</span> <span class="nav-text">Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">2.2.</span> <span class="nav-text">hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-%E5%AE%98%E7%BD%91"><span class="nav-number">2.2.1.</span> <span class="nav-text">hexo 官网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-hexo"><span class="nav-number">2.2.2.</span> <span class="nav-text">安装 hexo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%99"><span class="nav-number">3.</span> <span class="nav-text">建站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-hexo"><span class="nav-number">3.1.</span> <span class="nav-text">初始化 hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8-hexo"><span class="nav-number">3.2.</span> <span class="nav-text">启动 hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text">更改主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="nav-number">4.2.</span> <span class="nav-text">主题配置文件选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.</span> <span class="nav-text">永久链接配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">图片相对路径问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87"><span class="nav-number">6.</span> <span class="nav-text">首页不显示全文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E4%BD%8D%E7%BD%AE%E6%94%BE%E5%88%B0%E6%A0%87%E9%A2%98%E4%B8%8B%E6%96%B9"><span class="nav-number">7.</span> <span class="nav-text">标签位置放到标题下方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">8.</span> <span class="nav-text">命令</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">白东斌</p>
+  <div class="site-description" itemprop="description">当你想要放弃的那一刻，想想为什么当初坚持走到这里。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">白东斌</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
