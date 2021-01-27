@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="引言 centos 安装 nginx">
+  <meta name="description" content="引言 node.js 安装">
 <meta property="og:type" content="article">
-<meta property="og:title" content="centos 安装 nginx">
-<meta property="og:url" content="http://example.com/2021/01/26/26074/index.html">
+<meta property="og:title" content="centos安装nodejs">
+<meta property="og:url" content="http://example.com/2021/01/26/28987/0/index.html">
 <meta property="og:site_name" content="白东斌">
-<meta property="og:description" content="引言 centos 安装 nginx">
+<meta property="og:description" content="引言 node.js 安装">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-26T05:05:56.000Z">
-<meta property="article:modified_time" content="2021-01-26T05:05:56.000Z">
+<meta property="article:published_time" content="2021-01-26T10:02:06.000Z">
+<meta property="article:modified_time" content="2021-01-26T10:02:06.000Z">
 <meta property="article:author" content="白东斌">
 <meta property="article:tag" content="环境搭建">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/01/26/26074/">
+<link rel="canonical" href="http://example.com/2021/01/26/28987/0/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>centos 安装 nginx | 白东斌</title>
+  <title>centos安装nodejs | 白东斌</title>
   
 
 
@@ -167,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/26/26074/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/26/28987/0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -180,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          centos 安装 nginx
+          centos安装nodejs
         </h1>
 
         <div class="post-meta">
@@ -190,7 +190,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-01-26 13:05:56" itemprop="dateCreated datePublished" datetime="2021-01-26T13:05:56+08:00">2021-01-26</time>
+              <time title="创建时间：2021-01-26 18:02:06" itemprop="dateCreated datePublished" datetime="2021-01-26T18:02:06+08:00">2021-01-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,7 +198,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a>
+                  <a href="/categories/node-js/" itemprop="url" rel="index"><span itemprop="name">node.js</span></a>
                 </span>
             </span>
 
@@ -226,28 +226,13 @@
 
       
         <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><blockquote>
-<p>centos 安装 nginx</p>
+<p>node.js 安装</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="安装-gcc"><a href="#安装-gcc" class="headerlink" title="安装 gcc"></a>安装 gcc</h1><p>gcc是linux下的编译器在此不多做解释，感兴趣的小伙伴可以去查一下相关资料，它可以编译 C,C++,Ada,Object C和Java等语言</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y install gcc</span><br></pre></td></tr></table></figure>
-<h1 id="pcre、pcre-devel安装"><a href="#pcre、pcre-devel安装" class="headerlink" title="pcre、pcre-devel安装"></a>pcre、pcre-devel安装</h1><p>pcre是一个perl库，包括perl兼容的正则表达式库，nginx的http模块使用pcre来解析正则表达式，所以需要安装pcre库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install -y pcre pcre-devel</span><br></pre></td></tr></table></figure>
-<h1 id="zlib安装"><a href="#zlib安装" class="headerlink" title="zlib安装"></a>zlib安装</h1><p>zlib库提供了很多种压缩和解压缩方式nginx使用zlib对http包的内容进行gzip，所以需要安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install -y zlib zlib-devel</span><br></pre></td></tr></table></figure>
-<h1 id="安装openssl"><a href="#安装openssl" class="headerlink" title="安装openssl"></a>安装openssl</h1><p>openssl是web安全通信的基石，没有openssl，可以说我们的信息都是在裸奔。。。。。。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure>
-<h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure --prefix=/opt/soft/nginx-1.18.0 --with-http_stub_status_module --with-http_ssl_module</span><br><span class="line">$ make</span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-<p>引用：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37345604/article/details/90034424">https://blog.csdn.net/qq_37345604/article/details/90034424</a></p>
-
+<h1 id="从官网下载"><a href="#从官网下载" class="headerlink" title="从官网下载"></a>从官网下载</h1><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<h1 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -xvf node-v10.16.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># node config</span></span><br><span class="line"><span class="built_in">export</span> NODE_HOME=/opt/soft/node-v14.15.4</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$NODE_HOME</span>/bin</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<h1 id="npm配置淘宝镜像"><a href="#npm配置淘宝镜像" class="headerlink" title="npm配置淘宝镜像"></a>npm配置淘宝镜像</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -266,12 +251,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/01/25/17043/" rel="prev" title="hexo 搭建博客">
-      <i class="fa fa-chevron-left"></i> hexo 搭建博客
+    <a href="/2021/01/26/26074/0/" rel="prev" title="centos 安装 nginx">
+      <i class="fa fa-chevron-left"></i> centos 安装 nginx
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/01/26/28987/" rel="next" title="centos安装nodejs">
-      centos安装nodejs <i class="fa fa-chevron-right"></i>
+    <a href="/2021/01/26/55699/0/" rel="next" title="centos 安装 git">
+      centos 安装 git <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -331,7 +316,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-gcc"><span class="nav-number">2.</span> <span class="nav-text">安装 gcc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pcre%E3%80%81pcre-devel%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">pcre、pcre-devel安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zlib%E5%AE%89%E8%A3%85"><span class="nav-number">4.</span> <span class="nav-text">zlib安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85openssl"><span class="nav-number">5.</span> <span class="nav-text">安装openssl</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-number">6.</span> <span class="nav-text">编译</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.</span> <span class="nav-text">从官网下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B"><span class="nav-number">3.</span> <span class="nav-text">解压</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm%E9%85%8D%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F"><span class="nav-number">4.</span> <span class="nav-text">npm配置淘宝镜像</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -345,20 +330,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
