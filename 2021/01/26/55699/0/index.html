@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="白东斌">
 <meta property="og:description" content="引言 centos 安装 git">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://baidongbin.com/2021/01/26/55699/0/img.png">
-<meta property="og:image" content="http://baidongbin.com/2021/01/26/55699/0/img1.png">
+<meta property="og:image" content="http://baidongbin.com/2021/01/26/55699/0/centos%E5%AE%89%E8%A3%85git/img.png">
+<meta property="og:image" content="http://baidongbin.com/2021/01/26/55699/0/centos%E5%AE%89%E8%A3%85git/img1.png">
 <meta property="article:published_time" content="2021-01-26T14:31:13.000Z">
 <meta property="article:modified_time" content="2021-01-26T14:31:13.000Z">
 <meta property="article:author" content="白东斌">
 <meta property="article:tag" content="环境搭建">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://baidongbin.com/2021/01/26/55699/0/img.png">
+<meta name="twitter:image" content="http://baidongbin.com/2021/01/26/55699/0/centos%E5%AE%89%E8%A3%85git/img.png">
 
 <link rel="canonical" href="http://baidongbin.com/2021/01/26/55699/0/">
 
@@ -238,7 +238,7 @@
 <h1 id="配置git账户"><a href="#配置git账户" class="headerlink" title="配置git账户"></a>配置git账户</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
 <h1 id="配置SSH用于拉取远程仓库"><a href="#配置SSH用于拉取远程仓库" class="headerlink" title="配置SSH用于拉取远程仓库"></a>配置SSH用于拉取远程仓库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
 <p>生成的路径在/root/.ssh/<br>id_rsa：私钥 ，id_rsa.pub：公钥</p>
-<p><img src="/2021/01/26/55699/0/img.png" alt="img.png"><br><img src="/2021/01/26/55699/0/img1.png" alt="img.png"><br>复制刚才生成的 id_rsa.pub 公钥，Add SSH key</p>
+<p><img src="/2021/01/26/55699/0/./centos%E5%AE%89%E8%A3%85git/img.png" alt="img.png"><br><img src="/2021/01/26/55699/0/./centos%E5%AE%89%E8%A3%85git/img1.png" alt="img.png"><br>复制刚才生成的 id_rsa.pub 公钥，Add SSH key</p>
 <h1 id="测试一下拉取代码"><a href="#测试一下拉取代码" class="headerlink" title="测试一下拉取代码"></a>测试一下拉取代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:yourname/xxx.git</span><br></pre></td></tr></table></figure>
     </div>
 
